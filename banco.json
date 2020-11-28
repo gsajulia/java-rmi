@@ -1,0 +1,17 @@
+{
+    "bandas": [
+        {
+            "musicas": [
+                {
+                    "album": "Metallica",
+                    "nome": "Nothing else matters"
+                }
+            ],
+            "nome": "Metallica"
+        },
+        {
+            "musicas": [],
+            "nome": "Iron maiden"
+        }
+    ]
+}
