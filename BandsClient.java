@@ -4,7 +4,7 @@ public class BandsClient {
    public static void main(String[] args) {
       try {
          Bands obj = (Bands)Naming.lookup("//" + args[0] + "/Bands"); 
-         System.out.println("Mensagem do Servidor: " + obj.hello()); 
+         System.out.println("Mensagem do Servidor: " + obj.createBand()); 
       } catch (Exception ex) {
          System.out.println("Exception: " + ex.getMessage());
       } 

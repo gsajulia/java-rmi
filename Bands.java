@@ -1,7 +1,7 @@
 import java.rmi.*;
 
 public interface Bands extends Remote {
-   public String hello() throws RemoteException;
+   public String createBand() throws RemoteException;
 }
 
 
