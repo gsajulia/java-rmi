@@ -23,7 +23,8 @@ public class BandsClient {
 
          data = scanner.nextLine();
 
-         Bands obj = (Bands) Naming.lookup("rmi://" + args[0] + "/Bands");
+         Bands obj = (Bands)Naming.lookup("rmi://127.0.0.1:1099/BandsService"); //da pra tirar o :1099
+         // Bands obj = (Bands)Naming.lookup("//" + args[0] + "/Bands"); 
 
          switch (option) {
             case 1:

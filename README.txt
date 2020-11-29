@@ -2,11 +2,13 @@
 
 javac -d bin -sourcepath src -cp $(find lib -iname *.jar | xargs | tr " " ":") *.java
 
+cd bin
+
+rmic BandsImpl
+
 export CLASSPATH=$CLASSPATH:/Users/julia/Desktop/teste/trabalho-rmi
 
 rmiregistry &
-
-cd bin
 
 java -cp . BandsServer &
 
