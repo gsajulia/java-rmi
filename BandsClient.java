@@ -30,8 +30,8 @@ public class BandsClient {
          Bands obj = (Bands)reg.lookup("Bands"); //da pra tirar o :1099
          System.out.println(obj);
          System.out.println("RECEIVED");
-         obj.createBand();
-         System.out.println("CREATED");
+         var res = obj.createBand();
+         System.out.println("CREATED, RES: " + res);
 
          // Bands obj = (Bands)Naming.lookup("//" + args[0] + "/Bands"); 
 
