@@ -21,8 +21,11 @@ public class BandsServer extends UnicastRemoteObject {
       try {
          Bands obj = new BandsImpl();
          System.setProperty("java.rmi.server.hostname", "127.0.0.1");
-         LocateRegistry.createRegistry(1099); //ai se tirar a porta do client tem que tirar essa linha
-         // Naming.rebind("rmi://127.0.0.1/Bands", obj);
+         // var reg = LocateRegistry.getRegistry(1099); //ai se tirar a porta do client tem que tirar essa linha
+         var reg = LocateRegistry.createRegistry(1099); //ai se tirar a porta do client tem que tirar essa linha
+         System.out.println("Listening");
+         reg.bind("Bands", obj);
+         System.out.println("Bind");
       } catch (Exception ex) {
          System.out.println("Exception: " + ex.getMessage());
       }

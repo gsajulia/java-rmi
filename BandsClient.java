@@ -1,5 +1,7 @@
 import java.rmi.Naming;
 import java.util.Scanner;
+import java.rmi.*;
+import java.rmi.registry.*;
 
 public class BandsClient {
    public static void main(String[] args) {
@@ -10,8 +12,8 @@ public class BandsClient {
          boolean status;
 
          System.out.println("Opcoes\n\n 1 - Listar todos\n 2 - Excluir \n 3 - Adicionar Banda \n 4 - Buscar");
-         option = scanner.nextInt();
-         scanner.nextLine();
+         option =1;// scanner.nextInt();
+         // scanner.nextLine();
 
          if (option == 2) {
             System.out.println("Digite o nome da banda que deseja excluir:");
@@ -21,9 +23,16 @@ public class BandsClient {
             System.out.println("Digite o nome da banda que deseja buscar:");
          }
 
-         data = scanner.nextLine();
+         // data = scanner.nextLine();
 
-         Bands obj = (Bands)Naming.lookup("rmi://127.0.0.1:1099/BandsService"); //da pra tirar o :1099
+         System.out.println("LOOKUP");
+         var reg = LocateRegistry.getRegistry(1099); //ai se tirar a porta do client tem que tirar essa linha
+         Bands obj = (Bands)reg.lookup("Bands"); //da pra tirar o :1099
+         System.out.println(obj);
+         System.out.println("RECEIVED");
+         obj.createBand();
+         System.out.println("CREATED");
+
          // Bands obj = (Bands)Naming.lookup("//" + args[0] + "/Bands"); 
 
          switch (option) {

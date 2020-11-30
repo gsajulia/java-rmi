@@ -13,16 +13,17 @@ public class BandsImpl extends UnicastRemoteObject implements Bands {
     // private ArrayList<Songs> songs;
     public BandsImpl() throws RemoteException {
         super();
+        System.out.println("Cstr Bands aft super");
         // try {
         // this.name = name;
         // } catch(Exception e) {
-        // System.out.println("Something went wrong with foo!");
         // }
 
         // this.musicas = musicas;
     }
 
     public String createBand() throws RemoteException {
+        System.out.println("Create OK");
         return "Criou banda!!!";
     }
 
