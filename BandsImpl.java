@@ -10,6 +10,8 @@ import org.json.simple.parser.JSONParser;
 
 public class BandsImpl extends UnicastRemoteObject implements Bands {
 
+    BandsServer data = new BandsServer();
+
     // private ArrayList<Songs> songs;
     public BandsImpl() throws RemoteException {
         super();
@@ -22,9 +24,19 @@ public class BandsImpl extends UnicastRemoteObject implements Bands {
         // this.musicas = musicas;
     }
 
-    public String createBand() throws RemoteException {
-        System.out.println("Create OK");
-        return "Criou banda!!!";
+    public boolean createBand(String nome) throws RemoteException {
+        return data.createBand(nome);
+    }
+
+    public String listBands() throws RemoteException{
+        return data.ReturnJsonToStringBands();
+    }
+    public boolean deleteBand(String nome) throws RemoteException{
+        return data.deleteBand(nome);
+    }
+
+    public String findBand(String nome) throws RemoteException{
+        return data.findBand(nome);
     }
 
     
